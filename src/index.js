@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AppProvider } from '@pixi/react';
+import { Application } from 'pixi.js';
+
+const app = new Application();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <AppProvider value={app}>
     <App />
+    </AppProvider>
   </React.StrictMode>
 );
 
